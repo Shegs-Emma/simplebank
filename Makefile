@@ -10,7 +10,7 @@ dropdb:
 	docker exec -it postgres16 dropdb simple_bank
 
 migrateup:
-	migrate -path db/migration -database "" -verbose up
+	migrate -path db/migration -database "$(DB_URL)" -verbose up
 
 migrateup1:
 	migrate -path db/migration -database "$(DB_URL)" -verbose up 1
